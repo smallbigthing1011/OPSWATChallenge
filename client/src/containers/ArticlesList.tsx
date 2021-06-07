@@ -1,7 +1,7 @@
+import { Container, Grid } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import { Navbar, CreateArticle, Article } from "../components";
+import { Article, CreateArticle, Navbar } from "../components";
 import { REACT_APP_API_ENPOINT } from "../endpoint";
-import { Container, Grid, TextField } from "@material-ui/core";
 interface Props {}
 
 const ArticlesList: React.FC<Props> = () => {
@@ -59,8 +59,8 @@ const ArticlesList: React.FC<Props> = () => {
             spacing={4}
             className="articles-wrap"
           >
-            {loading
-              ? "loading"
+            {articles.length === 0
+              ? "No articles yet..."
               : articles.map((item: any) => {
                   return (
                     <Article

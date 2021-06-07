@@ -1,16 +1,16 @@
 import {
+  Button,
   Fab,
   Grid,
   TextareaAutosize,
-  Typography,
   TextField,
-  Button,
+  Typography,
 } from "@material-ui/core";
 import InsertPhotoRoundedIcon from "@material-ui/icons/InsertPhotoRounded";
 import React, { useEffect, useState } from "react";
+import { Navbar } from "../components";
 import { REACT_APP_API_ENPOINT } from "../endpoint";
 import DefaultAvatar from "../images/avatar.png";
-import { Navbar } from "../components";
 interface Props {}
 interface User {
   id: number;

@@ -9,9 +9,9 @@ import {
 } from "@material-ui/core";
 import DeleteForeverRoundedIcon from "@material-ui/icons/DeleteForeverRounded";
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Navbar } from "../components";
 import { REACT_APP_API_ENPOINT } from "../endpoint";
-import { useHistory } from "react-router-dom";
 
 interface Props {}
 interface Profile {
