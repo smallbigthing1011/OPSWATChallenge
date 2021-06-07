@@ -1,0 +1,104 @@
+@mixin boxShadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  a {
+    text-decoration: none;
+  }
+  .avatar {
+    width: 200px;
+    overflow: auto;
+    img {
+      border-radius: 80%;
+      width: 100%;
+    }
+  }
+  .navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+    height: 50px;
+    @include boxShadow();
+    position: sticky;
+    ul {
+      display: inline-flex;
+      width: 35%;
+      justify-content: space-evenly;
+      align-items: center;
+
+      li {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
+  .profileWrapper {
+    padding-top: 50px;
+  }
+  .formWrapper {
+    border-radius: 7px;
+    @include boxShadow();
+    width: 40%;
+    padding: 30px;
+    @include flexCenter(column);
+  }
+  .profileForm {
+    width: 100%;
+  }
+  .data-wrapper {
+    height: 80vh;
+    width: 100vw;
+    @include flexCenter(column);
+    .data-container {
+      width: inherit;
+      height: inherit;
+      @include flexCenter(column);
+      .data-grid {
+        width: 80%;
+        @include boxShadow();
+      }
+    }
+  }
+  .article-form-wrap {
+    padding: 20px;
+    @include boxShadow();
+    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-top: 20px;
+  }
+  .article-form {
+    @include flexCenter(row);
+  }
+  .articles-wrap {
+    margin-top: 20px;
+  }
+  .article {
+    word-wrap: break-word;
+    border-bottom: 1px solid rgb(65, 111, 154);
+    .description {
+      color: rgb(65, 111, 154);
+      font-size: 15px;
+      font-style: italic;
+    }
+    .body {
+      background-color: rgb(58, 59, 60);
+      color: rgb(255, 255, 255);
+      padding: 15px 20px 15px 20px;
+      border-radius: 6px;
+    }
+  }
+}
