@@ -6,12 +6,10 @@ interface Props {}
 
 const ArticlesList: React.FC<Props> = () => {
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   const cookieData: string = document.cookie;
   const token: string = cookieData.split("=")[1];
   const fetchArticlesData = async () => {
-    setLoading(true);
     const articlesData = await (
       await fetch(`${REACT_APP_API_ENPOINT}/api/articles`, {
         method: "GET",
@@ -23,8 +21,6 @@ const ArticlesList: React.FC<Props> = () => {
     ).json();
     if (!articlesData.message) {
       setArticles(articlesData.articles);
-
-      setLoading(false);
     }
   };
   useEffect(() => {
